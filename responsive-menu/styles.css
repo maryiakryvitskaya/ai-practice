@@ -19,6 +19,7 @@
     background: #fff;
     transform: translateY(-150%);
     transition: 0.3s ease;
+    display: none;
   }
 
   .menu.open {
