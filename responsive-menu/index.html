@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Responsive Menu</title>
+  </head>
+  <body>
+    <nav class="nav">
+      <button class="hamburger" id="menuBtn">Menu</button>
+      <ul class="menu" id="menu">
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact</li>
+      </ul>
+    </nav>
+
+    <script>
+      const btn = document.getElementById("menuBtn");
+      const menu = document.getElementById("menu");
+      btn.addEventListener("click", () => {
+        menu.classList.toggle("open");
+      });
+    </script>
+  </body>
+</html>
