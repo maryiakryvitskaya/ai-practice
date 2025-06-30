@@ -1,0 +1,29 @@
+<div class="user-table-container">
+  <table class="user-table">
+    <thead>
+      <tr>
+        <th>Name / Email</th>
+        <th>Address</th>
+        <th>Phone</th>
+        <th>Website</th>
+        <th>Company</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users$ | async; trackBy: trackByUserId" (click)="openUser(user)" class="user-row">
+        <td>
+          <div class="user-name">{{ user.name }}</div>
+          <div class="user-email">{{ user.email }}</div>
+        </td>
+        <td>{{ user.address.city }}, {{ user.address.street }}</td>
+        <td>{{ user.phone }}</td>
+        <td><a href="http://{{ user.website }}" target="_blank" (click)="$event.stopPropagation()">{{ user.website }}</a></td>
+        <td>{{ user.company.name }}</td>
+        <td><button class="delete-btn" (click)="deleteUser(user.id, $event)">✕</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <app-user-detail-modal *ngIf="selectedUser" [user]="selectedUser" (close)="closeModal()"></app-user-detail-modal>
+</div> 
