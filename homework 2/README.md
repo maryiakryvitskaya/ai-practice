@@ -11,6 +11,14 @@ This project is a responsive Angular application for displaying and managing use
 - SCSS variables and modular styles
 - Unit and integration tests for services and components
 
+## Screenshots
+
+### User Table
+![User Table](public/screenshots/user-table.png)
+
+### User Detail Modal
+![User Detail Modal](public/screenshots/user-modal.png)
+
 ## Folder Structure
 ```
 src/
@@ -62,7 +70,7 @@ src/
 
 ## SCSS & Styling
 - Uses Open Sans font (Google Fonts)
-- All colors, spacing, and breakpoints are managed in `src/styles/_variables.scss`
+- All colors, spacing, and breakpoints are managed in `src/styles/variables.scss`
 - Responsive design with media queries and SCSS best practices
 
 ## Best Practices Used
