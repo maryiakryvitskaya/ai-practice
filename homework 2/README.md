@@ -1,59 +1,84 @@
-# AngularProject
+# User Management Angular App
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.6.
+This project is a responsive Angular application for displaying and managing user data from an external API. It features a modern UI, table layout, modal details, and client-side user management.
 
-## Development server
+## Features
+- Fetches user data from [JSONPlaceholder](https://jsonplaceholder.typicode.com/users)
+- Responsive, modern table layout with sorting and actions
+- Modal dialog for detailed user info, including map links
+- Client-side user deletion
+- Clean, maintainable folder structure using Angular best practices
+- SCSS variables and modular styles
+- Unit and integration tests for services and components
 
-To start a local development server, run:
-
-```bash
-ng serve
+## Folder Structure
+```
+src/
+  app/
+    core/
+      user/
+        user.service.ts      # User data service
+        user.model.ts        # User interfaces
+    features/
+      user-table/
+        user-table.component.ts
+        user-table.component.html
+        user-table.component.scss
+      user-detail-modal/
+        user-detail-modal.component.ts
+        user-detail-modal.component.html
+        user-detail-modal.component.scss
+    app.component.ts
+    app.component.html
+    app.component.scss
+    app.config.ts
+    app.routes.ts
+  styles/
+    _variables.scss         # SCSS variables for colors, fonts, etc.
+    styles.scss             # Global styles
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## API
+- Data Source: [JSONPlaceholder Users](https://jsonplaceholder.typicode.com/users)
+- User model includes: id, name, username, email, address, phone, website, company
 
-## Code scaffolding
+## Setup & Usage
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+2. **Run the development server:**
+   ```bash
+   ng serve
+   ```
+   Open [http://localhost:4200](http://localhost:4200) in your browser.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Testing
+- **Unit & Integration Tests:**
+  ```bash
+  ng test
+  ```
+- Tests cover services, table, and modal components.
 
-```bash
-ng generate component component-name
-```
+## SCSS & Styling
+- Uses Open Sans font (Google Fonts)
+- All colors, spacing, and breakpoints are managed in `src/styles/_variables.scss`
+- Responsive design with media queries and SCSS best practices
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Best Practices Used
+- Standalone Angular components
+- Dependency injection with `inject()`
+- Observable data streams with the `async` pipe
+- `trackBy` for efficient list rendering
+- Modular, maintainable folder structure (core, features, styles)
+- Centralized SCSS variables
+- Unit and integration tests
 
-```bash
-ng generate --help
-```
+## Extending the App
+- Add new features in the `features/` directory
+- Add new services or models in `core/`
+- Add shared utilities or components in a `shared/` directory
 
-## Building
+---
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+For more details, see the Angular CLI documentation: [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli)
